@@ -1,0 +1,48 @@
+
+<!--<h1>This is Home Page</h1>
+
+<button (click)="GotoPageFnc()"> Goto User</button>
+<input placeholder="comment"[(ngModel)]="commentVar">
+<news-page title="Education"
+detail="Angular is taught in school"></news-page>
+<news-page title="Sports"
+detail="EE sala cup namde"></news-page>
+<news-page title="Politics"
+detail="Crow sat on DK Shivkumar Car"></news-page> -->
+
+
+
+
+
+<h1 chg-clr>This is Home Page</h1>
+<h2 chg-clr>hi how are you</h2>
+<button (click)="LoginFnc()">Login</button>
+
+<button (click)="GotoPageFnc()">Goto User</button>
+<br><br>
+ 
+<form>
+    <h2>Selected News: {{SelectedNews}}</h2>
+    <input placeholder="comment"
+        [(ngModel)]="commentVar"
+        name="commentVav"
+        #commentVav="ngModel">
+        <br><br>
+    <button (click)="addCommentFnc(commentVav)">Add</button>
+</form>
+<news-page title="Education"
+    detail="Angular is tot in school"
+    [commentAry]="commentAryVar['Education']"
+    (SelectMe)="SelectMeFnc($event)"
+    ></news-page>
+<news-page title="Sports"
+    detail="Ee sala Cup Namdhe"
+	[commentAry]="commentAryVar['Sports']"
+    (SelectMe)="SelectMeFnc($event)"
+    ></news-page>
+<news-page title="Politics"
+    detail="Crow sat on DK Shivkumar Car"
+	[commentAry]="commentAryVar['Politics']"
+    (SelectMe)="SelectMeFnc($event)"
+    ></news-page>
+ 

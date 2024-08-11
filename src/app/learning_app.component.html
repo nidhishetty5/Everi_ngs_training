@@ -1,0 +1,52 @@
+<h1>Hello How are you</h1>
+
+<form name="NamFomVav" #NamFomVav="ngForm">
+  <label>
+    Name:
+    <input
+      type="text"
+      placeholder="Name"
+      name="NamCol"
+      [(ngModel)]="NamFomVar.NamCol"
+      #NamFamVav="ngModel"
+      required>
+  </label>
+  <br>
+  <label>
+    ProdCol:
+    <input
+      type="text"
+      name="ProdCol"
+      [(ngModel)]="NamFomVar.ProdCol"
+      #PrdFomVav="ngModel"
+      required>
+  </label>
+  <br>
+  <label>
+    Cost:
+    <input
+      type="number"
+      name="CostCol"
+      [(ngModel)]="NamFomVar.CostCol"
+      #CstFomVav="ngModel"
+      required>
+  </label>
+  <br>
+  <button (click)="AddProdFnc(NamFomVav)">Add</button>
+</form>
+
+<table border="10">
+  <tr>
+    <th>Name</th>
+    <th>Prod</th>
+    <th>Cost</th>
+  </tr>
+  <tr *ngFor="let prod of prodAryVar; let i = index">
+    <td>{{prod.NamCol}}</td>
+    <td>{{prod.ProdCol}}</td>
+    <td>{{prod.CostCol}}</td>
+    <td><button (click)="DeleteProdFnc(prod.UidCol)">Delete</button></td>
+    <td><button (click)="editRow(i)">Edit</button></td>
+    <td><button *ngIf="EdtIdxVar === i" (click)="UptBtnFnc(i)">Update</button></td>
+  </tr>
+</table>
